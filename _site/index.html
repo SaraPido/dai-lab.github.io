@@ -1,0 +1,189 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="title" content="MIT Open Source">
+    <meta name="description" content="MIT Open Source Website">
+    <meta name="keywords" content="mit, dai, open, source, open source, finatra, finagle, scala">
+
+    <meta name="og:title" content="MIT Open Source">
+    <meta name="og:url" content="/">
+    <!-- <meta name="og:image" content=""> -->
+    <meta name="og:description" content="MIT Open Source Website">
+
+    <meta name="MIT:card" content="summary" />
+    <meta name="MIT:site" content="/" />
+    <meta name="MIT:title" content="MIT Open Source" />
+    <meta name="MIT:description" content="MIT Open Source Website" />
+    <!-- <meta name="MIT:image" content="" /> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv='Expires' content='0'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Cache-Control' content='no-cache'>
+    <meta http-equiv='imagetoolbar' content='no'>
+
+    <title>MIT Open Source</title>
+    <link rel="shortcut icon" type="image/png" href="assets/dai-favicon.png" />
+
+    <!-- Feather CSS -->
+    <link rel="stylesheet" href="/css/feather-core.css"/>
+    <link rel="stylesheet" href="/css/feather-component-grid.css"/>
+    <link rel="stylesheet" href="/css/feather-component-button.css"/>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/index.css"/>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-title">
+<!--            <span class="Icon Icon--logo Icon--large"></span>-->
+
+            <!-- Link in web -->
+            <a class="home-link" href="/" style="margin-left: 30px;">DAI Lab Open Source</a>
+
+            <!-- Text in mobile -->
+            <p class="home-text">DAI Lab Open Source</p>
+            <span id="caret" class="Icon Icon--caretDown"></span>
+        </div>
+        <ul class="nav-menu">
+            <!-- This link only exists in mobile -->
+            <li id="extra-mobile-link" class="nav-list-item">
+                <a class="nav-link" href="/">DAI Lab Open Source</a>
+            </li>
+
+            <li class="nav-list-item list-end">
+                <a class="nav-link" href="https://github.com/DAI-Lab" target="_blank">Github</a>
+            </li>
+        </div>
+    </nav>
+
+    <!-- Site wrapper -->
+    <div class="site">
+        <!-- Header -->
+
+<div class="header simple-header">
+    <div class="Grid container">
+        <div id="header-text" class="Grid-cell">
+            <h1 class="large-title">Projects</h1>
+            <div class="search-bar">
+                <input class="search-box" type="text" name="search" placeholder="Search Projects" autocomplete="off" />
+                <span class="Icon Icon--search"></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Container for no results text -->
+<div class="Grid container no-results-container"></div>
+
+<!-- Projects grid (See renderProjects() in projects.js) -->
+<div class="Grid container all-projects"></div>
+<!-- End of all-projects -->
+
+<script type="text/javascript">
+    let allProjects = [];
+    
+    
+        allProjects.push({
+            name: "AnonML",
+            nameWithOwner: "DAI-Lab/AnonML",
+            description: `<div></div>`,
+            color: "#3572A5",
+            primaryLanguage: "Python",
+            homepageURL: "",
+            pushedAt : "2017-06-12T14:10:17Z",
+            languages : "Python",
+            forks : "0",
+            topics : "machine-learning privacy-enhancing-technologies anonymity",
+            stars : "1",
+            watchers : "10",
+        })
+    
+        allProjects.push({
+            name: "Copulas",
+            nameWithOwner: "DAI-Lab/Copulas",
+            description: `<div>A library to model multivariate data using copulas </div>`,
+            color: "#3572A5",
+            primaryLanguage: "Python",
+            homepageURL: "",
+            pushedAt : "2018-10-10T22:04:58Z",
+            languages : "Python",
+            forks : "3",
+            topics : "machine-learning data-science",
+            stars : "5",
+            watchers : "11",
+        })
+    
+        allProjects.push({
+            name: "cookiecutter-pypackage",
+            nameWithOwner: "DAI-Lab/cookiecutter-pypackage",
+            description: `<div>DAI Lab's adaptation of cookiecutter-pypackage</div>`,
+            color: "#3572A5",
+            primaryLanguage: "Python",
+            homepageURL: "",
+            pushedAt : "2018-09-27T15:27:13Z",
+            languages : "Makefile Python",
+            forks : "1",
+            topics : "",
+            stars : "1",
+            watchers : "3",
+        })
+    
+        allProjects.push({
+            name: "vagrant",
+            nameWithOwner: "DAI-Lab/vagrant",
+            description: `<div>Vagrant files and related</div>`,
+            color: "#89e051",
+            primaryLanguage: "Shell",
+            homepageURL: "",
+            pushedAt : "2017-03-27T20:15:23Z",
+            languages : "Ruby Shell",
+            forks : "0",
+            topics : "",
+            stars : "0",
+            watchers : "2",
+        })
+    
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js" async></script>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="Grid container">
+            
+            <div class="Grid-cell footer-cell u-size1of4">
+                <a class="foot-link" href="">© 2018 Data to AI Group.</a>
+            </div>
+          
+        </div>
+    </div> <!-- End of Footer -->
+  </body>
+
+</html>
+
+<script src="/js/main.js"></script>
+<script src="/js/index.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-30775-124"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+//  gtag('config', 'UA-30775-124');
+</script>
+
