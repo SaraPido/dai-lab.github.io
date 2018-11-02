@@ -12,6 +12,7 @@ GITHUB_USERNAME = os.environ["GH_USERNAME"]
 GITHUB_OAUTH_TOKEN = os.environ["OAUTH_TOKEN"]
 GITHUB_API_ENDPOINT = "https://api.github.com/graphql"
 
+# This date is begin build project and count data
 CONST_START_DATE = '2018-11-02'
 
 print("LOG: Assuming the current path to be the root of the metrics repository.")
@@ -19,6 +20,7 @@ print("LOG: Assuming the current path to be the root of the metrics repository."
 SVG_NO_OF_MEMBERS = 'N/A'
 SVG_NO_OF_REPOS = 'N/A'
 
+# Current, we don't use this function
 def get_dates_weekly():
     dates = []
     start_date = datetime.datetime.strptime(CONST_START_DATE, "%Y-%m-%d")
@@ -31,6 +33,7 @@ def get_dates_weekly():
         start_date = end_date
     return dates
 
+# Current, we don't use this function
 def get_dates_monthly():
     dates = []
     start_date = datetime.datetime.strptime(CONST_START_DATE, "%Y-%m-%d")
@@ -48,14 +51,22 @@ def get_previous_date_weekly(current_date):
         return current_date
     start_date = datetime.datetime.strptime(current_date, "%Y-%m-%d")
     previous_date = start_date - datetime.timedelta(days=7)
-    return previous_date
+    begin_date = datetime.datetime.strptime(CONST_START_DATE, "%Y-%m-%d")
+    if previous_date < begin_date:
+        return CONST_START_DATE
+    return previous_date.strftime("%Y-%m-%d")
 
 def get_previous_date_monthly(current_date):
     if current_date == CONST_START_DATE:
         return current_date
     start_date = datetime.datetime.strptime(current_date, "%Y-%m-%d")
     previous_date = start_date - datetime.timedelta(days=28)
-    return previous_date
+    previous_date = previous_date.strftime("%Y-%m-01")
+    previous_date = datetime.datetime.strptime(previous_date, "%Y-%m-%d")
+    begin_date = datetime.datetime.strptime(CONST_START_DATE, "%Y-%m-%d")
+    if previous_date < begin_date:
+        return CONST_START_DATE
+    return previous_date.strftime("%Y-%m-%d")
 
 def fetch_one_page(query_string, variables):
     """
@@ -219,16 +230,16 @@ with open(file_path, "w+") as f:
     json.dump(CATEGORIES_JSON, f)
 
 DATA_METRIC = {}
-dates_weekly = get_dates_weekly()
-dates_monthly = get_dates_monthly()
 
 # Calculate data for metrics
+# WEEKDAY: 0-Monday, 6-Sunday.
+# WEEKLY will run on Sunday. MONTHLY will run on 1st of month.
 now = datetime.datetime.now()
 now_str = now.strftime("%Y-%m-%d")
 # WEEKLY
-if now_str in dates_weekly:
+if (now.weekday() == 6):
+    previous_date_weekly = get_previous_date_weekly(now_str)
     for repo in DATA_JSON:
-        previous_date_weekly = get_previous_date_weekly(now_str)
         #print(DATA_JSON[repo])
         # Create data file
         organization_repo_file = repo.replace('/', '__');
@@ -323,7 +334,7 @@ if now_str in dates_weekly:
 
 
 # MONTHLY
-if now_str in dates_monthly:
+if (now.strftime("%d") == '01' or now.strftime("%d") == '1'):
     for repo in DATA_JSON:
         previous_date_monthly = get_previous_date_monthly(now_str)
         # Create data file
@@ -445,7 +456,7 @@ def write_template_file(file_path, layout, permalink, title, options={}):
         f.write("---\n")
 # Generate template
 # WEEKLY
-if now_str in dates_weekly:
+if (now.weekday() == 6):
     for listCate in CATEGORIES_JSON:
         for cate in listCate:
             organization_folder_path = PATH_TO_METRICS + "/" + cate
@@ -463,13 +474,7 @@ if now_str in dates_weekly:
             title = "DAI Lab OSS Metrics Metrics report for "+ cate +" | WEEKLY-REPORT-" + now_str
             options = {"organization": cate, "current_date": now_str}
             write_template_file(organization_path, layout, permalink, title, options)
-            # MONTHLY page
-            organization_path = organization_folder_path + "/MONTHLY.md"
-            layout = "organization_monthly"
-            permalink = URL_METRICS + "/" + cate + "/MONTHLY" + "/"
-            title = "DAI Lab OSS Metrics Metrics report for "+ cate +" | MONTHLY-REPORT-" + now_str
-            options = {"organization": cate, "current_date": now_str}
-            write_template_file(organization_path, layout, permalink, title, options)
+            
             # WEEKLY DATE page
             organization_path = organization_folder_path + "/WEEKLY-REPORT-"+ now_str +".md"
             layout = "organization_weekly"
@@ -477,6 +482,54 @@ if now_str in dates_weekly:
             title = "DAI Lab OSS Metrics Metrics report for "+ cate +" | WEEKLY-REPORT-" + now_str
             options = {"organization": cate, "current_date": now_str}
             write_template_file(organization_path, layout, permalink, title, options)
+            
+            #Generate template for sub-categories
+            for subCate in listCate[cate]:
+                organization_folder_path = PATH_TO_METRICS + "/" + cate + "/" + subCate
+                # Index page
+                organization_path = organization_folder_path + "/index.md"
+                layout = "repository"
+                permalink = URL_METRICS + "/" + cate + "/" + subCate + "/"
+                title = "DAI Lab OSS Metrics Metrics report for " + subCate
+                options = {"organization": cate, "repository": subCate, "current_date": now_str}
+                write_template_file(organization_path, layout, permalink, title, options)
+                # WEEKLY page
+                organization_path = organization_folder_path + "/WEEKLY.md"
+                layout = "weekly"
+                permalink = URL_METRICS + "/" + cate + "/" + subCate + "/WEEKLY" + "/"
+                title = "DAI Lab OSS Metrics Metrics report for "+ subCate +" | WEEKLY-REPORT-" + now_str
+                options = {"organization": cate, "repository": subCate, "current_date": now_str}
+                write_template_file(organization_path, layout, permalink, title, options)
+                
+                # WEEKLY DATE page
+                organization_path = organization_folder_path + "/WEEKLY-REPORT-"+ now_str +".md"
+                layout = "weekly"
+                permalink = URL_METRICS + "/" + cate + "/" + subCate + "/WEEKLY-REPORT-"+ now_str
+                title = "DAI Lab OSS Metrics Metrics report for "+ subCate +" | WEEKLY-REPORT-" + now_str
+                options = {"organization": cate, "repository": subCate, "current_date": now_str}
+                write_template_file(organization_path, layout, permalink, title, options)
+                
+# MONTHLY
+if (now.strftime("%d") == '01' or now.strftime("%d") == '1'):
+    for listCate in CATEGORIES_JSON:
+        for cate in listCate:
+            organization_folder_path = PATH_TO_METRICS + "/" + cate
+            # Index page
+            organization_path = organization_folder_path + "/index.md"
+            layout = "organization"
+            permalink = URL_METRICS + "/" + cate + "/"
+            title = "Index"
+            options = {"organization": cate, "current_date": now_str}
+            write_template_file(organization_path, layout, permalink, title, options)
+            
+            # MONTHLY page
+            organization_path = organization_folder_path + "/MONTHLY.md"
+            layout = "organization_monthly"
+            permalink = URL_METRICS + "/" + cate + "/MONTHLY" + "/"
+            title = "DAI Lab OSS Metrics Metrics report for "+ cate +" | MONTHLY-REPORT-" + now_str
+            options = {"organization": cate, "current_date": now_str}
+            write_template_file(organization_path, layout, permalink, title, options)
+            
             # MONTHLY DATE page
             organization_path = organization_folder_path + "/MONTHLY-REPORT-"+ now_str +".md"
             layout = "organization_monthly"
@@ -495,13 +548,7 @@ if now_str in dates_weekly:
                 title = "DAI Lab OSS Metrics Metrics report for " + subCate
                 options = {"organization": cate, "repository": subCate, "current_date": now_str}
                 write_template_file(organization_path, layout, permalink, title, options)
-                # WEEKLY page
-                organization_path = organization_folder_path + "/WEEKLY.md"
-                layout = "weekly"
-                permalink = URL_METRICS + "/" + cate + "/" + subCate + "/WEEKLY" + "/"
-                title = "DAI Lab OSS Metrics Metrics report for "+ subCate +" | WEEKLY-REPORT-" + now_str
-                options = {"organization": cate, "repository": subCate, "current_date": now_str}
-                write_template_file(organization_path, layout, permalink, title, options)
+                
                 # MONTHLY page
                 organization_path = organization_folder_path + "/MONTHLY.md"
                 layout = "monthly"
@@ -509,13 +556,7 @@ if now_str in dates_weekly:
                 title = "DAI Lab OSS Metrics Metrics report for "+ subCate +" | MONTHLY-REPORT-" + now_str
                 options = {"organization": cate, "repository": subCate, "current_date": now_str}
                 write_template_file(organization_path, layout, permalink, title, options)
-                # WEEKLY DATE page
-                organization_path = organization_folder_path + "/WEEKLY-REPORT-"+ now_str +".md"
-                layout = "weekly"
-                permalink = URL_METRICS + "/" + cate + "/" + subCate + "/WEEKLY-REPORT-"+ now_str
-                title = "DAI Lab OSS Metrics Metrics report for "+ subCate +" | WEEKLY-REPORT-" + now_str
-                options = {"organization": cate, "repository": subCate, "current_date": now_str}
-                write_template_file(organization_path, layout, permalink, title, options)
+                
                 # MONTHLY DATE page
                 organization_path = organization_folder_path + "/MONTHLY-REPORT-"+ now_str +".md"
                 layout = "monthly"
