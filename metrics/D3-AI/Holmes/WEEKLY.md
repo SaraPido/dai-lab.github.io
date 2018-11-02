@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/D3-AI/Holmes/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for Holmes | WEEKLY-REPORT-2018-10-26'
+title: 'DAI Lab OSS Metrics Metrics report for Holmes | WEEKLY-REPORT-2018-11-02'
 organization: 'D3-AI'
 repository: 'Holmes'
-current_date: '2018-10-26'
+current_date: '2018-11-02'
 ---

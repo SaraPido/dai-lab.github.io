@@ -116,10 +116,13 @@ var renderProjects = function(projectsList, searchString="") {
 
 // Sort the projects
 var sortFunction = function(a, b) {
+    // Sort by Name
+    var textA = a.name.toUpperCase();
+    var textB = b.name.toUpperCase();
     // Sort by recently pushedAt
     var deltaA = (new Date) - Date.parse(a.pushedAt)
     var deltaB = (new Date) - Date.parse(b.pushedAt)
-    return deltaA>=deltaB?1:-1
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : (deltaA>=deltaB?1:-1)
 }
 
 // Sort and Render

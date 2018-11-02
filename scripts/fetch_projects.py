@@ -12,7 +12,7 @@ GITHUB_USERNAME = os.environ["GH_USERNAME"]
 GITHUB_OAUTH_TOKEN = os.environ["OAUTH_TOKEN"]
 GITHUB_API_ENDPOINT = "https://api.github.com/graphql"
 
-CONST_START_DATE = '2018-10-26'
+CONST_START_DATE = '2018-11-02'
 
 print("LOG: Assuming the current path to be the root of the metrics repository.")
 
