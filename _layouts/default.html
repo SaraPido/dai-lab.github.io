@@ -48,19 +48,27 @@
     <nav>
         <div class="nav-title">
             <a class="home-link" href="{{ site.baseurl }}/"><img class="page-logo" src="/assets/logo-1.png" /></a>
-            
+            <!-- Link in web -->
+            <a class="home-link home-title-page" href="{{ site.baseurl }}/">DAI Lab Open Source</a>
+
             <!-- Text in mobile -->
+            <p class="home-text">DAI Lab Open Source</p>
             <span id="caret" class="icon-menu"></span>
         </div>
         <ul class="nav-menu">
+          
+            <!-- This link only exists in mobile -->
+            <li id="extra-mobile-link" class="nav-list-item">
+                <a class="nav-link" href="{{ site.baseurl }}/">DAI Lab Open Source</a>
+            </li>
             
-          <li class="nav-list-item">
+            <li class="nav-list-item">
                 <a class="nav-link" href="https://github.com/DAI-Lab" target="_blank">DAI-Lab</a>
             </li>
-          <li class="nav-list-item">
+            <li class="nav-list-item">
                 <a class="nav-link" href="https://github.com/HDI-Project" target="_blank">HDI-Project</a>
             </li>
-          <li class="nav-list-item list-end">
+            <li class="nav-list-item list-end">
                 <a class="nav-link" href="https://github.com/D3-AI" target="_blank">D3-AI</a>
             </li>
         </ul>
@@ -78,20 +86,8 @@
     <div class="footer">
         <div class="Grid container">
             
-            <div class="Grid-cell footer-cell u-size1of4">
-                <span class="foot-link">© 2018 Data to AI Group.</span>
-            </div>
-          
-            <div class="Grid-cell footer-cell u-size1of4">
-                <a class="foot-link" target="_blank" href="#">Cookies</a>
-            </div>
-
-            <div class="Grid-cell footer-cell u-size1of4">
-                <a class="foot-link" target="_blank" href="#">Privacy</a>
-            </div>
-
-            <div class="Grid-cell footer-cell u-size1of4">
-                <a class="foot-link" target="_blank" href="#">Terms and Conditions</a>
+            <div class="Grid-cell footer-cell u-size11of12">
+                <span class="foot-link">© 2018 Data to AI Group. Web design forked from <a href="https://twitter.github.io" target="_blank">twitter.github.io</a></span>
             </div>
         </div>
     </div> <!-- End of Footer -->
