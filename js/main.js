@@ -77,6 +77,10 @@ function lessThan800px(mediaQuery) {
     }
 }
 
+// Set current year for copyright
+var currentYear = (new Date()).getFullYear();
+document.getElementById('copyright-year').innerHTML = currentYear;
+
 $(window).scroll(function() {
     if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
         $('#return-to-top').fadeIn(200);    // Fade in the arrow
