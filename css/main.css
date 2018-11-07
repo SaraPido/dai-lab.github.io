@@ -40,7 +40,7 @@ nav {
 /* Navigation title - web */
 .nav-title {
     display: flex;
-    width: 380px;
+    width: 430px;
     align-items: center;
     padding-left: 40px;
 }
@@ -69,11 +69,7 @@ a.home-link:link, a.home-link:visited, .home-text {
 a.home-link:hover, a.home-link:active {
   color: var(--tw-color-blue-primary);
 }
-.home-title-page {
-    width: 160px;
-    color: #14171a;
-    margin-left: 0;
-}
+
 span.icon-menu {
     width: 32px;
     height: 32px;
@@ -115,6 +111,13 @@ a.nav-link:hover, a.nav-link:active {
   display: flex;
   margin: 0;
   padding: 0;
+}
+
+a.home-title-page {
+    width: 160px;
+    color: #14171a;
+    margin-left: 30px!important;
+    margin-right: 20px!important;
 }
 
 .home-text {
