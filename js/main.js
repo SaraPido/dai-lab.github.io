@@ -36,9 +36,6 @@ site.style.minHeight = "calc(100vh - " + footerHeight + "px)"
 // Create DOM element for navigation bar
 var navBar = document.getElementsByTagName("nav")[0]
 
-// Create DOM element for mobile Twitter Open Source title
-var navTitle = document.getElementsByClassName("home-text")[0]
-
 
 // Media queries
 
@@ -57,7 +54,6 @@ function lessThan650px(mediaQuery) {
     if (mediaQuery.matches) {
         var caret = document.getElementById("caret")
         caret.addEventListener("click", mobileNavigation)
-        navTitle.addEventListener("click", mobileNavigation)
     } else {
         navBar.classList.remove("active")
     }
@@ -81,3 +77,15 @@ function lessThan800px(mediaQuery) {
     }
 }
 
+$(window).scroll(function() {
+    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+    } else {
+        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+    }
+});
+$('#return-to-top').click(function() {      // When arrow is clicked
+    $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+    }, 500);
+});

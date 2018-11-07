@@ -81,6 +81,19 @@ def fetch_one_page(query_string, variables):
     else:
         raise Exception("Error in GitHub API query. Status Code : {}, Response: {}".format(r.status_code, r.json()))
 
+# Number Contributors of Repository
+def count_contributors_repository(repos):
+    r = requests.get("https://api.github.com/repos/" + repos + "/stats/contributors", auth=(GITHUB_USERNAME, GITHUB_OAUTH_TOKEN))
+    numContributors = 0
+    if r.status_code == 200:
+        contributors = r.json()
+        if isinstance(contributors[0], dict) and 'total' in contributors[0]:
+            numContributors = len(contributors)
+    else:
+        raise Exception("Error in GitHub API query. Status Code : {}, Response: {}".format(r.status_code, r.json()))
+
+    return numContributors
+
 all_org_edges = []  # All the repos in the org with their stats
 
 # Read repos-to-include.txt
@@ -112,7 +125,7 @@ for org in all_orgs:
         print("Received request for", org)
         #print(response)
         
-        if org == 'DAI-Lab':
+        if response["data"]["organization"]["members"]["totalCount"]:
             SVG_NO_OF_MEMBERS = response["data"]["organization"]["members"]["totalCount"]
 
         repository_edges = response["data"]["organization"]["repositories"]["edges"]
@@ -208,11 +221,30 @@ for repo in public_repos:
     DATA_JSON[repo_full_name]["issue"] = DATA_JSON[repo_full_name]["issue"]["totalCount"]
     DATA_JSON[repo_full_name]["open_issue"] = DATA_JSON[repo_full_name]["open_issue"]["totalCount"]
     DATA_JSON[repo_full_name]["closed_issue"] = DATA_JSON[repo_full_name]["closed_issue"]["totalCount"]
+    # Contributors
+    DATA_JSON[repo_full_name]["contributors"] = count_contributors_repository(repo_full_name)
 
 # Save to _data directory
 file_path = PATH_TO_DATA + "/" + "projects.json"
 with open(file_path, "w+") as f:
     json.dump(DATA_JSON, f)
+print("LOG: Saved to", file_path)
+
+# Statistics Summary
+commits = 0
+contributors = 0
+for repo in DATA_JSON:
+    commits = commits + DATA_JSON[repo]["commits"]
+    contributors = contributors + DATA_JSON[repo]["contributors"]
+DATA_STATISTICS = {
+    "repositories": len(public_repos),
+    "commits": commits,
+    "contributors": contributors
+}
+# Save to _data directory
+file_path = PATH_TO_DATA + "/" + "statistics.json"
+with open(file_path, "w+") as f:
+    json.dump(DATA_STATISTICS, f)
 print("LOG: Saved to", file_path)
 
 # Set variable to store categories

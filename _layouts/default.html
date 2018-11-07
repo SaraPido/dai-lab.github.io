@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/feather-core.css"/>
     <link rel="stylesheet" href="{{ site.baseurl }}/css/feather-component-grid.css"/>
     <link rel="stylesheet" href="{{ site.baseurl }}/css/feather-component-button.css"/>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/font-awesome.css"/>
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"/>
@@ -46,21 +47,13 @@
     <!-- Navigation Bar -->
     <nav>
         <div class="nav-title">
-<!--            <span class="Icon Icon--logo Icon--large"></span>-->
-
-            <!-- Link in web -->
-            <a class="home-link" href="{{ site.baseurl }}/" style="margin-left: 30px;">DAI Lab Open Source</a>
-
+            <a class="home-link" href="{{ site.baseurl }}/"><img class="page-logo" src="/assets/logo-1.png" /></a>
+            
             <!-- Text in mobile -->
-            <p class="home-text">DAI Lab Open Source</p>
-            <span id="caret" class="Icon Icon--caretDown"></span>
+            <span id="caret" class="icon-menu"></span>
         </div>
         <ul class="nav-menu">
-            <!-- This link only exists in mobile -->
-            <li id="extra-mobile-link" class="nav-list-item">
-                <a class="nav-link" href="{{ site.baseurl }}/">DAI Lab Open Source</a>
-            </li>
-
+            
           <li class="nav-list-item">
                 <a class="nav-link" href="https://github.com/DAI-Lab" target="_blank">DAI-Lab</a>
             </li>
@@ -70,29 +63,44 @@
           <li class="nav-list-item list-end">
                 <a class="nav-link" href="https://github.com/D3-AI" target="_blank">D3-AI</a>
             </li>
-        </div>
+        </ul>
     </nav>
 
     <!-- Site wrapper -->
     <div class="site">
         {{ content }}
     </div>
-
+    
+    <!-- Return to Top -->
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+    
     <!-- Footer -->
     <div class="footer">
         <div class="Grid container">
             
             <div class="Grid-cell footer-cell u-size1of4">
-                <a class="foot-link" href="">© 2018 Data to AI Group.</a>
+                <span class="foot-link">© 2018 Data to AI Group.</span>
             </div>
           
+            <div class="Grid-cell footer-cell u-size1of4">
+                <a class="foot-link" target="_blank" href="#">Cookies</a>
+            </div>
+
+            <div class="Grid-cell footer-cell u-size1of4">
+                <a class="foot-link" target="_blank" href="#">Privacy</a>
+            </div>
+
+            <div class="Grid-cell footer-cell u-size1of4">
+                <a class="foot-link" target="_blank" href="#">Terms and Conditions</a>
+            </div>
         </div>
     </div> <!-- End of Footer -->
+    
+    <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/js/main.js"></script>
+    <script src="{{ site.baseurl }}/js/{{ page.custom_js }}"></script>
+
+    {% include ga.html %}
   </body>
 
 </html>
-
-<script src="{{ site.baseurl }}/js/main.js"></script>
-<script src="{{ site.baseurl }}/js/{{ page.custom_js }}"></script>
-
-{% include ga.html %}

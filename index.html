@@ -14,6 +14,17 @@ custom_js: index.js
     <div class="Grid container">
         <div id="header-text" class="Grid-cell">
             <h1 class="large-title">Projects</h1>
+            <div class="statistics-summary">
+                <div class="statistics">
+                    <span>{{ site.data.statistics.repositories }} repositories</span>
+                </div>
+                <div class="statistics">
+                    <span>{{ site.data.statistics.commits }} commits</span>
+                </div>
+                <div class="statistics">
+                    <span>{{ site.data.statistics.contributors }} contributors</span>
+                </div>
+            </div>
             <div class="search-bar">
                 <input class="search-box" type="text" name="search" placeholder="Search Projects" autocomplete="off" />
                 <span class="Icon Icon--search"></span>
