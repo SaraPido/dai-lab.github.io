@@ -82,13 +82,19 @@ def fetch_one_page(query_string, variables):
         raise Exception("Error in GitHub API query. Status Code : {}, Response: {}".format(r.status_code, r.json()))
 
 # Number Contributors of Repository
-def count_contributors_repository(repos):
-    r = requests.get("https://api.github.com/repos/" + repos + "/contributors", auth=(GITHUB_USERNAME, GITHUB_OAUTH_TOKEN))
+def count_contributors_repository(repos):    
+    r = requests.get("https://api.github.com/repos/" + repos + "/stats/contributors", auth=(GITHUB_USERNAME, GITHUB_OAUTH_TOKEN))
     numContributors = 0
     if r.status_code == 200:
         contributors = r.json()
-        if isinstance(contributors[0], dict) and 'login' in contributors[0]:
+        if isinstance(contributors[0], dict):
             numContributors = len(contributors)
+    elif r.status_code == 202:
+        rs = requests.get("https://api.github.com/repos/" + repos + "/stats/contributors", auth=(GITHUB_USERNAME, GITHUB_OAUTH_TOKEN), timeout=3)
+        if rs.status_code == 200:
+            contributors = rs.json()
+            if isinstance(contributors[0], dict):
+                numContributors = len(contributors)
     else:
         raise Exception("Error in GitHub API query. Status Code : {}, Response: {}".format(r.status_code, r.json()))
 
