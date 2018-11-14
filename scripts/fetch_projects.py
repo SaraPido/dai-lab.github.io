@@ -96,7 +96,8 @@ def count_contributors_repository(repos):
             if isinstance(contributors[0], dict):
                 numContributors = len(contributors)
     else:
-        raise Exception("Error in GitHub API query. Status Code : {}, Response: {}".format(r.status_code, r.json()))
+        return 0
+        #raise Exception("Error in GitHub API query. Status Code : {}, Response: {}".format(r.status_code, r.json()))
 
     return numContributors
 
@@ -219,7 +220,9 @@ for repo in public_repos:
     DATA_JSON[repo_full_name]["watchers"] = DATA_JSON[repo_full_name]["watchers"]["totalCount"]
     
     # Other information
-    DATA_JSON[repo_full_name]["commits"] = DATA_JSON[repo_full_name]["defaultBranchRef"]["target"]["history"]["totalCount"]
+    DATA_JSON[repo_full_name]["commits"] = 0
+    if DATA_JSON[repo_full_name]["defaultBranchRef"]:
+        DATA_JSON[repo_full_name]["commits"] = DATA_JSON[repo_full_name]["defaultBranchRef"]["target"]["history"]["totalCount"]
     DATA_JSON[repo_full_name]["pull_request"] = DATA_JSON[repo_full_name]["pull_request"]["totalCount"]
     DATA_JSON[repo_full_name]["open_pull_request"] = DATA_JSON[repo_full_name]["open_pull_request"]["totalCount"]
     DATA_JSON[repo_full_name]["merged_pull_request"] = DATA_JSON[repo_full_name]["merged_pull_request"]["totalCount"]
@@ -243,7 +246,7 @@ for repo in DATA_JSON:
     commits = commits + DATA_JSON[repo]["commits"]
     contributors = contributors + DATA_JSON[repo]["contributors"]
 DATA_STATISTICS = {
-    "repositories": len(public_repos),
+    "repositories": len(DATA_JSON),
     "commits": commits,
     "contributors": contributors
 }
