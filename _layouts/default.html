@@ -45,33 +45,34 @@
   <body>
 
     <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-title">
-            <a class="home-link" href="{{ site.baseurl }}/"><img class="page-logo" src="/assets/logo-1.png" /></a>
-            <!-- Link in web -->
-            <a class="home-link home-title-page" href="{{ site.baseurl }}/">DAI Lab Open Source</a>
+    <nav class="nav-bar">
+        <div class="Grid container navigation-bar">
+            <div class="nav-title">
+                <!-- Link in web -->
+                <a class="home-link home-title-page" href="{{ site.baseurl }}/">DAI Lab Open Source</a>
 
-            <!-- Text in mobile -->
-            <p class="home-text">DAI Lab Open Source</p>
-            <span id="caret" class="icon-menu"></span>
+                <!-- Text in mobile -->
+                <p class="home-text">DAI Lab Open Source</p>
+                <span id="caret" class="Icon Icon--caretDown"></span>
+            </div>
+            <ul class="nav-menu">
+
+                <!-- This link only exists in mobile -->
+                <li id="extra-mobile-link" class="nav-list-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/">DAI Lab Open Source</a>
+                </li>
+
+                <li class="nav-list-item">
+                    <a class="nav-link" href="https://github.com/DAI-Lab" target="_blank">Core ML</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-link" href="https://github.com/HDI-Project" target="_blank">HDI</a>
+                </li>
+                <li class="nav-list-item list-end">
+                    <a class="nav-link" href="https://github.com/D3-AI" target="_blank">Applications</a>
+                </li>
+            </ul>
         </div>
-        <ul class="nav-menu">
-          
-            <!-- This link only exists in mobile -->
-            <li id="extra-mobile-link" class="nav-list-item">
-                <a class="nav-link" href="{{ site.baseurl }}/">DAI Lab Open Source</a>
-            </li>
-            
-            <li class="nav-list-item">
-                <a class="nav-link" href="https://github.com/DAI-Lab" target="_blank">DAI-Lab</a>
-            </li>
-            <li class="nav-list-item">
-                <a class="nav-link" href="https://github.com/HDI-Project" target="_blank">HDI-Project</a>
-            </li>
-            <li class="nav-list-item list-end">
-                <a class="nav-link" href="https://github.com/D3-AI" target="_blank">D3-AI</a>
-            </li>
-        </ul>
     </nav>
 
     <!-- Site wrapper -->

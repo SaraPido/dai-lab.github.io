@@ -87,6 +87,11 @@ $(window).scroll(function() {
     } else {
         $('#return-to-top').fadeOut(200);   // Else fade out the arrow
     }
+    if ($(this).scrollTop() >= 200) {
+        $('.nav-bar').addClass('scrolled', {duration:2000});
+    } else {
+        $('.nav-bar').removeClass('scrolled', {duration:2000});
+    }
 });
 $('#return-to-top').click(function() {      // When arrow is clicked
     $('body,html').animate({
