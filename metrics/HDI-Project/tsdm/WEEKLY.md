@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/HDI-Project/tsdm/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for tsdm | WEEKLY-REPORT-2018-11-18'
+title: 'DAI Lab OSS Metrics Metrics report for tsdm | WEEKLY-REPORT-2018-12-09'
 organization: 'HDI-Project'
 repository: 'tsdm'
-current_date: '2018-11-18'
+current_date: '2018-12-09'
 ---
