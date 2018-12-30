@@ -4,5 +4,5 @@ permalink: '/metrics/HDI-Project/MetaData.json/'
 title: 'DAI Lab OSS Metrics Metrics report for MetaData.json'
 organization: 'HDI-Project'
 repository: 'MetaData.json'
-current_date: '2018-12-23'
+current_date: '2018-12-30'
 ---
