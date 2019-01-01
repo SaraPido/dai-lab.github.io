@@ -4,5 +4,5 @@ permalink: '/metrics/HDI-Project/FeatureHub/'
 title: 'DAI Lab OSS Metrics Metrics report for FeatureHub'
 organization: 'HDI-Project'
 repository: 'FeatureHub'
-current_date: '2018-12-30'
+current_date: '2019-01-01'
 ---

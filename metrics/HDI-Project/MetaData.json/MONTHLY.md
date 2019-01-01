@@ -1,8 +1,8 @@
 ---
 layout: 'monthly'
 permalink: '/metrics/HDI-Project/MetaData.json/MONTHLY/'
-title: 'DAI Lab OSS Metrics Metrics report for MetaData.json | MONTHLY-REPORT-2018-11-02'
+title: 'DAI Lab OSS Metrics Metrics report for MetaData.json | MONTHLY-REPORT-2019-01-01'
 organization: 'HDI-Project'
 repository: 'MetaData.json'
-current_date: '2018-11-02'
+current_date: '2019-01-01'
 ---

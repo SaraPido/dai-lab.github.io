@@ -4,5 +4,5 @@ permalink: '/metrics/HDI-Project/ATM/'
 title: 'DAI Lab OSS Metrics Metrics report for ATM'
 organization: 'HDI-Project'
 repository: 'ATM'
-current_date: '2018-12-30'
+current_date: '2019-01-01'
 ---

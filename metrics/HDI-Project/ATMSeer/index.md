@@ -4,5 +4,5 @@ permalink: '/metrics/HDI-Project/ATMSeer/'
 title: 'DAI Lab OSS Metrics Metrics report for ATMSeer'
 organization: 'HDI-Project'
 repository: 'ATMSeer'
-current_date: '2018-12-30'
+current_date: '2019-01-01'
 ---
