@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/HDI-Project/Trane-Demos/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for Trane-Demos | WEEKLY-REPORT-2018-12-30'
+title: 'DAI Lab OSS Metrics Metrics report for Trane-Demos | WEEKLY-REPORT-2019-01-06'
 organization: 'HDI-Project'
 repository: 'Trane-Demos'
-current_date: '2018-12-30'
+current_date: '2019-01-06'
 ---
