@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/HDI-Project/ATMSeer/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for ATMSeer | WEEKLY-REPORT-2019-01-06'
+title: 'DAI Lab OSS Metrics Metrics report for ATMSeer | WEEKLY-REPORT-2019-01-13'
 organization: 'HDI-Project'
 repository: 'ATMSeer'
-current_date: '2019-01-06'
+current_date: '2019-01-13'
 ---

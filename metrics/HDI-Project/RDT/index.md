@@ -4,5 +4,5 @@ permalink: '/metrics/HDI-Project/RDT/'
 title: 'DAI Lab OSS Metrics Metrics report for RDT'
 organization: 'HDI-Project'
 repository: 'RDT'
-current_date: '2019-01-06'
+current_date: '2019-01-13'
 ---
