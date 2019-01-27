@@ -4,5 +4,5 @@ permalink: '/metrics/DAI-Lab/TGAN/'
 title: 'DAI Lab OSS Metrics Metrics report for TGAN'
 organization: 'DAI-Lab'
 repository: 'TGAN'
-current_date: '2019-01-20'
+current_date: '2019-01-27'
 ---
