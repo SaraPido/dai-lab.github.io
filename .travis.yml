@@ -7,9 +7,6 @@ language: python
 python:
   - "3.6"
 
-cache:
- ccache: false
- 
 git:
   depth: false
 
