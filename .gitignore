@@ -10,3 +10,4 @@ __pycache__
 node_modules
 /nbproject/private/
 /nbproject
+/scripts/__pycache__
