@@ -77,7 +77,7 @@ query ($owner: String!, $endCursor: String) {
         }
       }
     }
-    members {
+    membersWithRole {
       totalCount
     }
   }
