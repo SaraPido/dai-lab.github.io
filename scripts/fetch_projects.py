@@ -8,6 +8,7 @@ import re
 import datetime
 
 import graphql_queries
+import string
 
 PATH_TO_DATA = "_data"
 GITHUB_USERNAME = os.environ["GH_USERNAME"]
@@ -197,7 +198,10 @@ for repo in public_repos:
     DATA_JSON[repo_full_name]["contributors"] = count_contributors_repository(repo_full_name)
 
     # descriptionHTML
-    description = re.sub('<[^<]+?>', '', DATA_JSON[repo_full_name]["descriptionHTML"])
+    printable = set(string.printable)
+    des = DATA_JSON[repo_full_name]["descriptionHTML"]
+    des = ''.join(filter(lambda x: x in printable, des))
+    description = re.sub(r'(<[^<+]+?>)|(\n)|(\t)', '', des)
     DATA_JSON[repo_full_name]["descriptionHTML"] = description
 
 # Save to _data directory
