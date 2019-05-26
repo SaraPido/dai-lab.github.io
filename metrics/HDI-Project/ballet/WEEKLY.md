@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/HDI-Project/ballet/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for ballet | WEEKLY-REPORT-2019-05-19'
+title: 'DAI Lab OSS Metrics Metrics report for ballet | WEEKLY-REPORT-2019-05-26'
 organization: 'HDI-Project'
 repository: 'ballet'
-current_date: '2019-05-19'
+current_date: '2019-05-26'
 ---
