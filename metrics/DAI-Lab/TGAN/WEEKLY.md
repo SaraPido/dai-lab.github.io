@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/DAI-Lab/TGAN/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for TGAN | WEEKLY-REPORT-2019-05-26'
+title: 'DAI Lab OSS Metrics Metrics report for TGAN | WEEKLY-REPORT-2019-06-02'
 organization: 'DAI-Lab'
 repository: 'TGAN'
-current_date: '2019-05-26'
+current_date: '2019-06-02'
 ---
