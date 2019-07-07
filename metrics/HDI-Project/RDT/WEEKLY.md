@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/HDI-Project/RDT/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for RDT | WEEKLY-REPORT-2019-06-30'
+title: 'DAI Lab OSS Metrics Metrics report for RDT | WEEKLY-REPORT-2019-07-07'
 organization: 'HDI-Project'
 repository: 'RDT'
-current_date: '2019-06-30'
+current_date: '2019-07-07'
 ---
