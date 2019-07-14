@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/DAI-Lab/iBOCA/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for iBOCA | WEEKLY-REPORT-2019-07-07'
+title: 'DAI Lab OSS Metrics Metrics report for iBOCA | WEEKLY-REPORT-2019-07-14'
 organization: 'DAI-Lab'
 repository: 'iBOCA'
-current_date: '2019-07-07'
+current_date: '2019-07-14'
 ---
