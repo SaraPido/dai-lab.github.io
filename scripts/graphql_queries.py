@@ -44,36 +44,36 @@ query ($owner: String!, $endCursor: String) {
           watchers {
             totalCount
           }
-            defaultBranchRef{
-                target{
-                    ... on Commit {
-                        history(){
-                            totalCount
-                        }
-                    }
-                }
-            }
-            pull_request: pullRequests {
-                totalCount
-            }
-            open_pull_request: pullRequests(states:[OPEN]) {
-                totalCount
-            }
-            merged_pull_request: pullRequests(states:[MERGED]) {
-                totalCount
-            }
-            closed_pull_request: pullRequests(states:[CLOSED]) {
-                totalCount
-            }
-            issue: issues {
-                totalCount
-            }
-            open_issue: issues(states:[OPEN]) {
-                totalCount
-            }
-            closed_issue: issues(states:[CLOSED]) {
-                totalCount
-            }           
+          defaultBranchRef{
+              target{
+                  ... on Commit {
+                      history(first:10){
+                          totalCount
+                      }
+                  }
+              }
+          }
+          pull_request: pullRequests {
+              totalCount
+          }
+          open_pull_request: pullRequests(states:[OPEN]) {
+              totalCount
+          }
+          merged_pull_request: pullRequests(states:[MERGED]) {
+              totalCount
+          }
+          closed_pull_request: pullRequests(states:[CLOSED]) {
+              totalCount
+          }
+          issue: issues {
+              totalCount
+          }
+          open_issue: issues(states:[OPEN]) {
+              totalCount
+          }
+          closed_issue: issues(states:[CLOSED]) {
+              totalCount
+          }
         }
       }
     }

@@ -97,7 +97,7 @@ for org in all_orgs:
         print("Sending request for", org)
         response = fetch_one_page(graphql_queries.org_all_repos, variables)
         print("Received request for", org)
-        
+
         if response and response['data']:
             if response["data"]["organization"]["membersWithRole"]["totalCount"]:
                 SVG_NO_OF_MEMBERS = response["data"]["organization"]["membersWithRole"]["totalCount"]
@@ -126,7 +126,10 @@ for repo in all_repos:
     variables = json.dumps({"owner": repo[0], "repo": repo[1], "endCursor": None})
 
     response = fetch_one_page(graphql_queries.repo_wise, variables)
-    all_repo_edges.append(response["data"])
+    if response['errors']:
+        continue
+    if response and response['data']:
+        all_repo_edges.append(response["data"])
 
 print("LOG: Fetched all the individual repos as well. Count:", len(all_repo_edges))
 
