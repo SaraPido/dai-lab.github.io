@@ -4,5 +4,5 @@ permalink: '/metrics/DAI-Lab/SDGym/'
 title: 'DAI Lab OSS Metrics Metrics report for SDGym'
 organization: 'DAI-Lab'
 repository: 'SDGym'
-current_date: '2019-11-10'
+current_date: '2019-11-17'
 ---
