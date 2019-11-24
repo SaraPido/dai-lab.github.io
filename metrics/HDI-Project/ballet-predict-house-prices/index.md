@@ -4,5 +4,5 @@ permalink: '/metrics/HDI-Project/ballet-predict-house-prices/'
 title: 'DAI Lab OSS Metrics Metrics report for ballet-predict-house-prices'
 organization: 'HDI-Project'
 repository: 'ballet-predict-house-prices'
-current_date: '2019-11-17'
+current_date: '2019-11-24'
 ---
