@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/HDI-Project/MLPrimitives/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for MLPrimitives | WEEKLY-REPORT-2019-12-22'
+title: 'DAI Lab OSS Metrics Metrics report for MLPrimitives | WEEKLY-REPORT-2019-12-29'
 organization: 'HDI-Project'
 repository: 'MLPrimitives'
-current_date: '2019-12-22'
+current_date: '2019-12-29'
 ---
