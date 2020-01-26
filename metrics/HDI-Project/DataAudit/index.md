@@ -4,5 +4,5 @@ permalink: '/metrics/HDI-Project/DataAudit/'
 title: 'DAI Lab OSS Metrics Metrics report for DataAudit'
 organization: 'HDI-Project'
 repository: 'DataAudit'
-current_date: '2020-01-19'
+current_date: '2020-01-26'
 ---

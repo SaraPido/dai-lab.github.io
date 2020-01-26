@@ -4,5 +4,5 @@ permalink: '/metrics/sdv-dev/TGAN/'
 title: 'DAI Lab OSS Metrics Metrics report for TGAN'
 organization: 'sdv-dev'
 repository: 'TGAN'
-current_date: '2020-01-19'
+current_date: '2020-01-26'
 ---
