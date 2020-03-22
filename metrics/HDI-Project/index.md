@@ -3,5 +3,5 @@ layout: 'organization'
 permalink: '/metrics/HDI-Project/'
 title: 'Index'
 organization: 'HDI-Project'
-current_date: '2020-03-15'
+current_date: '2020-03-22'
 ---
