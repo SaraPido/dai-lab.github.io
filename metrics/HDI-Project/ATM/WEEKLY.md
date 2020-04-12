@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/HDI-Project/ATM/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for ATM | WEEKLY-REPORT-2020-04-05'
+title: 'DAI Lab OSS Metrics Metrics report for ATM | WEEKLY-REPORT-2020-04-12'
 organization: 'HDI-Project'
 repository: 'ATM'
-current_date: '2020-04-05'
+current_date: '2020-04-12'
 ---
