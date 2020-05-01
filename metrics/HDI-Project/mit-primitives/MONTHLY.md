@@ -1,8 +1,8 @@
 ---
 layout: 'monthly'
 permalink: '/metrics/HDI-Project/mit-primitives/MONTHLY/'
-title: 'DAI Lab OSS Metrics Metrics report for mit-primitives | MONTHLY-REPORT-2020-04-01'
+title: 'DAI Lab OSS Metrics Metrics report for mit-primitives | MONTHLY-REPORT-2020-05-01'
 organization: 'HDI-Project'
 repository: 'mit-primitives'
-current_date: '2020-04-01'
+current_date: '2020-05-01'
 ---
