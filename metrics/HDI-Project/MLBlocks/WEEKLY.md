@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/HDI-Project/MLBlocks/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for MLBlocks | WEEKLY-REPORT-2020-04-26'
+title: 'DAI Lab OSS Metrics Metrics report for MLBlocks | WEEKLY-REPORT-2020-05-03'
 organization: 'HDI-Project'
 repository: 'MLBlocks'
-current_date: '2020-04-26'
+current_date: '2020-05-03'
 ---

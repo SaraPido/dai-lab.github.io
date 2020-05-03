@@ -4,5 +4,5 @@ permalink: '/metrics/sdv-dev/SDMetrics/'
 title: 'DAI Lab OSS Metrics Metrics report for SDMetrics'
 organization: 'sdv-dev'
 repository: 'SDMetrics'
-current_date: '2020-05-01'
+current_date: '2020-05-03'
 ---
