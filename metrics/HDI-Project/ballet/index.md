@@ -4,5 +4,5 @@ permalink: '/metrics/HDI-Project/ballet/'
 title: 'DAI Lab OSS Metrics Metrics report for ballet'
 organization: 'HDI-Project'
 repository: 'ballet'
-current_date: '2020-05-03'
+current_date: '2020-05-10'
 ---
