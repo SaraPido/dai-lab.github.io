@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/sdv-dev/SDV/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for SDV | WEEKLY-REPORT-2020-05-10'
+title: 'DAI Lab OSS Metrics Metrics report for SDV | WEEKLY-REPORT-2020-05-17'
 organization: 'sdv-dev'
 repository: 'SDV'
-current_date: '2020-05-10'
+current_date: '2020-05-17'
 ---

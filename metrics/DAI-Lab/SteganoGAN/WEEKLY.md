@@ -1,8 +1,8 @@
 ---
 layout: 'weekly'
 permalink: '/metrics/DAI-Lab/SteganoGAN/WEEKLY/'
-title: 'DAI Lab OSS Metrics Metrics report for SteganoGAN | WEEKLY-REPORT-2020-05-10'
+title: 'DAI Lab OSS Metrics Metrics report for SteganoGAN | WEEKLY-REPORT-2020-05-17'
 organization: 'DAI-Lab'
 repository: 'SteganoGAN'
-current_date: '2020-05-10'
+current_date: '2020-05-17'
 ---
